@@ -8,6 +8,8 @@ var exec = require('child_process').exec;
 var util = require('util');
 var pdf = require('html-pdf');
 
+var category_id = 203290327;      // replace with your category_id
+
 var zenClient = zendesk.createClient({
 	username:  'mnyemail@myemail.com',
 	token:     'mytoken',
@@ -57,7 +59,7 @@ var options = {
 getSections();
 
 function getArticles(){
-	zenClient.articles.listByCategory(203290327, function(err, request, result){
+	zenClient.articles.listByCategory(category_id, function(err, request, result){
 		for (var i = 0; i < result.length; i++) {
 			
 			var sec = sections.find(function(index){
