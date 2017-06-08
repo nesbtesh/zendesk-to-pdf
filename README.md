@@ -31,7 +31,7 @@ Now [generate](https://support.zendesk.com/hc/en-us/articles/226022787-Generatin
 
 
 Copy that token and paste it where it says mytoken. 
-Finally replace "myurl.zendesk.com" with your Zendesk url.
+Finally replace "myurl.zendesk.com" with your Zendesk url. And replace the category_id with your category_id.
 
 
 ```
@@ -43,6 +43,7 @@ Finally replace "myurl.zendesk.com" with your Zendesk url.
 	});
 
 ```
+
 
 ## Running
 
