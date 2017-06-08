@@ -18,16 +18,13 @@ var zenClient = zendesk.createClient({
 });
 
 var articles = {},
-	sections = {},
+	sections = [],
 	htmlOutput = '<style type="text/css"> @font-face {font-family:"regular";src: url("/font/HelveticaLTStd-Roman_gdi.eot");src: url("/font/HelveticaLTStd-Roman_gdi.eot?#iefix") format("embedded-opentype"),url("/font/HelveticaLTStd-Roman_gdi.woff") format("woff"),url("/font/HelveticaLTStd-Roman_gdi.ttf") format("truetype"),url("/font/HelveticaLTStd-Roman_gdi.svg#HelveticaLTStd-Roman") format("svg");font-weight: 200;font-style: normal;font-stretch: normal;unicode-range: U+0020-25CA;}body{font-size: 11px; line-height: 14px; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;} img{max-width: 500px;} .page-break{ display: block; page-break-before: always; }</style>'
-	+ '<img style="float: right; width 200px; height: 200px; margin-bottom: 20px; margin-top: 50px;" src="https://p6.zdassets.com/hc/theme_assets/1073225/200309248/zenQMS_logo_ekelly_PNG_square.png">'
 	+ '<p style="clear: both;"><h1 style="float:right; font-size: 38px;">User Guide</h1></p>'
 	+ '<div style="height: 100px;"></div>'
 	+ '<p style="clear: both;">This User Guide was generated directly from the online ZenQMS Knowledgebase. Please visit the support section for the latest articles, related video tutorials and product announcements. </p>'
 	+ '<div style="height: 100px;"></div>'
 	+ '<p style="font-weight: 600;">STATEMENT OF OWNERSHIP</p>'
-	+ '<p>ZenQMS has prepared this document for existing/potential clients to use solely as a training manual.  The information contained in this document is proprietary.  In no event shall all or any portion of this document be distributed, published or in any way disseminated for any other purpose without the expressed written permission of ZenQMS. </p>'
-	+ '<p>Copyright © 2016 ZenQMS LLC. All Rights Reserved.</p></div>'
 	+ '<div class="page-break"></div>';
 var options = { 
 	format: 'Letter', 
@@ -61,7 +58,7 @@ getSections();
 function getArticles(){
 	zenClient.articles.listByCategory(category_id, function(err, request, result){
 		for (var i = 0; i < result.length; i++) {
-			
+
 			var sec = sections.find(function(index){
 				return index.id === result[i].section_id;
 			});

@@ -1,17 +1,26 @@
 {
-  "name": "Zendesk To PDF",
+  "name": "zendesk-to-pdf",
   "version": "1.0.0",
-  "description": "For migrating data from zendesk.",
+  "description": "",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Nessim Btesh",
-  "license": "ISC",
   "dependencies": {
     "axios": "^0.14.0",
     "html-pdf": "^2.1.0",
     "node-zendesk": "^1.1.10",
     "request": "^2.74.0"
-  }
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nesbtesh/zendesk-to-pdf.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nesbtesh/zendesk-to-pdf/issues"
+  },
+  "homepage": "https://github.com/nesbtesh/zendesk-to-pdf#readme"
 }
